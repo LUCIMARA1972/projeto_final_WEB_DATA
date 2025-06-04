@@ -3,7 +3,8 @@ import pandas as pd
 import plotly.express as px
 
 df = pd.read_csv('bases_upload/tabela1_obitos_por_estado.csv', sep=',')
-
+df = df.drop(columns=['UF'])
+             
 colunas_alvo = ['ignorado','vivo','obito']
 for col in colunas_alvo:
     df[col] = pd.to_numeric(df[col], errors = 'coerce')
@@ -82,5 +83,5 @@ st.markdown(f"""
 - *Valor Mínimo:* {minimo}
 
 Esses valores representam o comportamento dos dados da coluna escolhida.  
-Use os gráficos acima para analisar a distribuição dos dados escolhidos e identificar possíveis outliers, comparando a dispersão em relação a media e media.
+Use os gráficos acima para analisar a distribuição dos dados escolhidos e identificar possíveis outliers, comparando a dispersão em relação a media e mediana
 """)
