@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+# Codigo atualizado corretamente
 df = pd.read_csv('bases_upload/tabela1_obitos_por_estado.csv', sep=',')
 df = df.drop(columns=['UF'])
              
